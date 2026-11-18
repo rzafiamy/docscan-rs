@@ -1,0 +1,24 @@
+[package]
+name = "docscan"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Document photo to scan: UVDoc dewarping in Rust/Candle (GGUF), conservative enhancement, PDF"
+keywords.workspace = true
+categories.workspace = true
+
+[features]
+default = []
+cuda = ["candle-core/cuda"]
+metal = ["candle-core/metal"]
+
+[dependencies]
+candle-core.workspace = true
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp", "tiff", "bmp"] }
+flate2 = "1"
+rayon = "1"
