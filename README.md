@@ -98,6 +98,9 @@ scan into a synthetic phone photo (perspective, curl, shadow, warm light).
 - A shadow with a razor-sharp edge leaves a one-pixel line in `bw` mode.
 - UVDoc was trained on A4-like pages; a small card in a large photo is
   found, but check `coverage` and the score.
+- The score checks the grid (inside the photo, no fold-over), not what it
+  frames: a photo without any document still gets a smooth grid and a high
+  score. Deciding that there is a document is the caller's job.
 
 ## License
 

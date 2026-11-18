@@ -99,7 +99,9 @@ pub struct Detection {
     /// Top-left, top-right, bottom-right, bottom-left, source pixels.
     pub corners: Quad,
     /// 0..1: grid inside the photo and without folds; below 0.9 the
-    /// geometry is doubtful (check the result against the photo).
+    /// geometry is doubtful (check the result against the photo). It does
+    /// not say whether there is a document: UVDoc returns a smooth grid for
+    /// any image.
     pub score: f32,
     /// Share of the photo the document covers.
     pub coverage: f32,
